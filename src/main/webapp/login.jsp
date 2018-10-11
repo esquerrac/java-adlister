@@ -3,34 +3,54 @@
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-<h3>Please login below</h3>
-<form method="post">
-    <label for="username">Username: </label>
-    <input type="text" name="username" id="username">
-    <c:set var="userLogin" value="request.getParameter('username')"/>
-    <br>
-    <label for="password">Password: </label>
-    <input type="password" name="password" id="password">
-    <c:set var="userPass" value="request.getParameter('password')"/>
-    <br>
-    <button type=submit id="submit">Login</button>
+<%@include file="partials/navbar.jsp"%>
 
+<form class="form-horizontal" method="post">
+    <h3>Please login below</h3>
+    <div class="form-group">
+        <div class="col-sm-10">
+            <input type="email" name="username" class="form-control" id="username" placeholder="Username">
+            <c:set var="userLogin" value="request.getParameter('username')"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-10">
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+            <c:set var="userPass" value="request.getParameter('password')"/>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button class="btn btn-outline-info" id="submit">Login</button>
+        </div>
+    </div>
 </form>
-<script>
-    document.getElementById("#submit").click(function () {
-        <c:choose>
-        <c:when test="${userLogin =='admin' && userPass =='password'}">
-        <c:redirect url="profile.jsp"/>
-        </c:when>
 
-        <c:otherwise>
-        <c:redirect url="wrongUser.jsp"/>
-        </c:otherwise>
+<%--<script>--%>
+    <%--document.getElementById("#submit").click(function () {--%>
+        <%--<c:choose>--%>
+        <%--<c:when test="${userLogin =='admin' && userPass =='password'}">--%>
+        <%--<c:redirect url="profile.jsp"/>--%>
+        <%--</c:when>--%>
 
-        </c:choose>
-    })
-</script>
+        <%--<c:otherwise>--%>
+        <%--<c:redirect url="wrongUser.jsp"/>--%>
+        <%--</c:otherwise>--%>
+
+        <%--</c:choose>--%>
+    <%--})--%>
+<%--</script>--%>
 </body>
 </html>
