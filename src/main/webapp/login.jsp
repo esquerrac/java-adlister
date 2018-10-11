@@ -24,16 +24,11 @@
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <div class="checkbox">
-                <label>
-                    <input type="checkbox"> Remember me
-                </label>
-            </div>
         </div>
     </div>
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
-            <button class="btn btn-outline-info" id="submit">Login</button>
+            <button class="btn btn-outline-primary" id="submit">Login</button>
         </div>
     </div>
 </form>
