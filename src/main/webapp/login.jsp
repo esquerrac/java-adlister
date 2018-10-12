@@ -8,7 +8,7 @@
 <body>
 <%@include file="partials/navbar.jsp"%>
 
-<form class="form-horizontal" method="post">
+<form class="form-horizontal" method="post" action="/login.jsp">
     <h3>Please login below</h3>
     <div class="form-group">
         <div class="col-sm-10">
@@ -33,19 +33,18 @@
     </div>
 </form>
 
-<%--<script>--%>
-    <%--document.getElementById("#submit").click(function () {--%>
-        <%--<c:choose>--%>
-        <%--<c:when test="${userLogin =='admin' && userPass =='password'}">--%>
-        <%--<c:redirect url="profile.jsp"/>--%>
-        <%--</c:when>--%>
+<script>
+    document.getElementById("#submit").click(function () {
+        <c:choose>
+        <c:when test="${userLogin =='admin' && userPass =='password'}">
+        <c:redirect url="profile.jsp"/>
+        </c:when>
 
-        <%--<c:otherwise>--%>
-        <%--<c:redirect url="wrongUser.jsp"/>--%>
-        <%--</c:otherwise>--%>
+        <c:otherwise>
+        </c:otherwise>
 
-        <%--</c:choose>--%>
-    <%--})--%>
-<%--</script>--%>
+        </c:choose>
+    })
+</script>
 </body>
 </html>
