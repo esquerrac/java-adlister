@@ -10,13 +10,13 @@
 <div class="container-fluid">
     <%@include file="../partials/navbar.jsp"%>
     <h1>Here are all the ads:</h1>
-    <c:forEach var="ads" items="${'ads'}}">
+    <c:forEach var="ad" items="${ads}">
         <div class="card">
             <div class="card-header">
-                <h3>${ads.title}</h3>
+                <h3>${ad.title}</h3>
             </div>
             <div class="card-body">
-                <p>${ads.description}</p>
+                <p>${ad.description}</p>
             </div>
             <div class="card-footer"></div>
         </div>
